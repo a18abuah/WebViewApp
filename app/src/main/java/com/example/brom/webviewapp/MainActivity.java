@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,8 +24,10 @@ public class MainActivity extends AppCompatActivity {
 
         WebView webView = new WebView(this);
         setContentView(webView);
-       // webView.loadUrl("https://www.google.se");
-        webView.loadUrl("file:///android_asset/Abbo.html");
+       webView.loadUrl("http://wwwlab.iit.his.se/a18abuah/projekt/Mobilapplikation%20projekt/Startsida.html");
+        //webView.loadUrl("file:///android_asset/Abbo.html");
+
+
         // 1. Create a WebView element in the layout file content_main.xml
         // -- Commit and push to your github fork
         // 2. Give the WebView element created in step 1 ID "my_webview"
@@ -36,6 +39,16 @@ public class MainActivity extends AppCompatActivity {
         // -- Commit and push to your github fork
         // 5. Enter the url to load in our WebView
         // -- Commit and push to your github fork
+        WebSettings webSettings = webView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        webSettings.setLoadWithOverviewMode(true);
+        webSettings.setUseWideViewPort(true);
+        webSettings.setBuiltInZoomControls(true);
+        webSettings.setDisplayZoomControls(false);
+        webSettings.setSupportZoom(true);
+        webSettings.setDefaultTextEncodingName("utf-8");
+
     }
 
     @Override
